@@ -737,13 +737,10 @@ from detectron2.data import MetadataCatalog, DatasetCatalog
 from detectron2.data.datasets import register_coco_instances
 from google.colab.patches import cv2_imshow
 
-register_coco_instances("my_dataset_train", {}, "./mmdetection/data/coco/annotations/train_coco.json", "./mmdetection/data/coco/train2017")
-register_coco_instances("my_dataset_val", {}, "./mmdetection/data/coco/annotations/val_coco.json", "./mmdetection/data/coco/val2017")
-register_coco_instances("my_dataset_test", {}, "./mmdetection/data/coco/annotations/instances_test2017.json", "./mmdetection/data/coco/test")
+register_coco_instances("my_dataset_test", {}, "./data/annotations/instances_test.json", "./data/test")
 
 cfg = get_cfg()
 cfg.merge_from_file(model_zoo.get_config_file("COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x.yaml"))
-cfg.DATASETS.TRAIN = ("my_dataset_train",)
 cfg.MODEL.DEVICE='cpu'
 cfg.DATASETS.TEST = ()
 cfg.DATALOADER.NUM_WORKERS = 2
@@ -771,7 +768,7 @@ with open('./mmdetection/data/coco/annotations/instances_test2017.json') as f:
     data = json.load(f)
     
 for img_info in data["images"]:
-    im = cv2.imread("./mmdetection/data/coco/test2017/" + img_info["file_name"])
+    im = cv2.imread("./data/test/" + img_info["file_name"])
     outputs = predictor(im)  # format is documented at https://detectron2.readthedocs.io/tutorials/models.html#model-output-format
 
     outputs = instances_to_coco_json(outputs["instances"],img_info["id"])
