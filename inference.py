@@ -764,7 +764,7 @@ from detectron2.utils.visualizer import ColorMode
 
 json_output = []
 
-with open('./mmdetection/data/coco/annotations/instances_test2017.json') as f:
+with open('./data/annotations/instances_test.json') as f:
     data = json.load(f)
     
 for img_info in data["images"]:
