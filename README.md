@@ -10,3 +10,5 @@ This is a project of implement instance segementation. We had implement the task
 ## Dataset Preprocessing
 
 I use generate_coco_file.py to prepare the coco json format.
+
+> python generate_coco_file.py
