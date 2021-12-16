@@ -11,8 +11,13 @@ This is a project of implement instance segementation. We had implement the task
 
 I use generate_coco_file.py to prepare the coco json format. It will output train/validation coco json file and classification of training/validation image
 
-'''
+```
 python generate_coco_file.py
-'''
+```
 
 ## train model
+
+I use detectron.py to train my model. It will save the model weight in output/ directory every 200 iterations. The final model weight is saved as "model_final.pth"   
+```
+python detectron.py
+```
