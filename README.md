@@ -7,4 +7,4 @@ After downloading, please put it in output file.
 
 This is a project of implement instance segementation. We had implement the task base on following backbone modules:
 
-  Detectron2, from https://github.com/facebookresearch/detectron2 or https://github.com/conansherry/detectron2 for windows build
+1. Detectron2, from https://github.com/facebookresearch/detectron2 or https://github.com/conansherry/detectron2 for windows build
