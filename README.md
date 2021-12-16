@@ -9,4 +9,4 @@ This is a project of implement instance segementation. We had implement the task
 
 ## Dataset Preprocessing
 
-I use generate_coco_json to prepare the coco json format.
+I use generate_coco_file.py to prepare the coco json format.
